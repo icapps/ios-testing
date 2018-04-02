@@ -1,0 +1,39 @@
+PODS:
+  - iOSSnapshotTestCase (2.2.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 2.2.0)
+  - iOSSnapshotTestCase/Core (2.2.0)
+  - iOSSnapshotTestCase/SwiftSupport (2.2.0):
+    - iOSSnapshotTestCase/Core
+  - Mockingjay (2.0.1):
+    - Mockingjay/Core (= 2.0.1)
+    - Mockingjay/XCTest (= 2.0.1)
+  - Mockingjay/Core (2.0.1):
+    - URITemplate (~> 2.0)
+  - Mockingjay/XCTest (2.0.1):
+    - Mockingjay/Core
+  - Nimble (7.0.3)
+  - Nimble-Snapshots (6.4.1):
+    - Nimble-Snapshots/Core (= 6.4.1)
+  - Nimble-Snapshots/Core (6.4.1):
+    - iOSSnapshotTestCase (~> 2.0)
+    - Nimble (~> 7.0)
+  - Quick (1.2.0)
+  - URITemplate (2.0.3)
+
+DEPENDENCIES:
+  - Mockingjay (~> 2.0)
+  - Nimble (~> 7.0)
+  - Nimble-Snapshots (~> 6.3)
+  - Quick (~> 1.2)
+
+SPEC CHECKSUMS:
+  iOSSnapshotTestCase: 415bd84f9dbba4ff45fede49d800bc7332fbedac
+  Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble-Snapshots: 438fb1a6fa3c655e246fc9ac375f6cd2964d759a
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
+
+PODFILE CHECKSUM: 3b7c0152e460d96da6cf06d21ad2de2cf2bcdd17
+
+COCOAPODS: 1.4.0
