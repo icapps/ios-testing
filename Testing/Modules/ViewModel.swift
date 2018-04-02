@@ -9,4 +9,18 @@
 import Foundation
 
 class ViewModel {
+    
+    // MARK: - Username
+    
+    var username: String?
+    
+    // MARK: - Labels
+    
+    var titleLabel: String {
+        if let username = username {
+            return "Hello \(username)!"
+        } else {
+            return "Hello!"
+        }
+    }
 }
