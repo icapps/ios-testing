@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     private lazy var firstButton:UIButton = {
         let button = UIButton(type: UIButtonType.roundedRect)
-        button.setTitle(viewModel.firstButtonText, for: .normal)
+        button.setTitle("Do something else", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didPressFirstButton), for: .touchUpInside)
         
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     private lazy var secondButton:UIButton = {
         let button = UIButton(type: UIButtonType.roundedRect)
-        button.setTitle(viewModel.secondButtonText, for: .normal)
+        button.setTitle("Do something async", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didPressSecondButton), for: .touchUpInside)
         
@@ -79,20 +79,20 @@ class ViewController: UIViewController {
     }
     
     private func reloadUI() {
-        titleLabel.text = viewModel.titleLabebl
-        greetingLabel.text = viewModel.greetingLabel
+        titleLabel.text = viewModel.titleLabel
+        greetingLabel.text = viewModel.greetingLabel(with: "Some username")
     }
     
     // MARK: Actions
     
     @objc private func didPressFirstButton() {
-        viewModel.doSomethingAsync {
-            print("🍩")
+        viewModel.async(with: "Some username") { greeting in
+            print("🍩 \(greeting)")
         }
     }
     
     @objc private func didPressSecondButton() {
-        viewModel.changeSomething()
+        viewModel.trigger()
     }
     
 }

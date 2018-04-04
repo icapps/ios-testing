@@ -8,20 +8,6 @@
 
 import Foundation
 
-protocol GreetingGenerating {
-    func greeting(with username:String?) -> String
-}
-
-class GreetingGenerator:GreetingGenerating {
-    func greeting(with username:String?) -> String {
-        if let username = username {
-            return "Hello \(username)!"
-        } else {
-            return "Hello!"
-        }
-    }
-}
-
 protocol ViewModelDelegate:class {
     func didChangeSomething(_ sender:ViewModel)
 }
@@ -30,23 +16,9 @@ class ViewModel {
     
     typealias CompletionHandler = (()->())
     
-    private let greetingGenerator:GreetingGenerating
+    private let greetingGenerator: GreetingGenerating
     
     weak var delegate:ViewModelDelegate?
-    
-    // MARK: - Username
-    
-    var username: String?
-    
-    // MARK: - Labels
-    
-    let titleLabebl: String = "Hello world"
-    let firstButtonText: String = "Do something async"
-    let secondButtonText: String = "Do something else"
-    
-    var greetingLabel: String {
-        return greetingGenerator.greeting(with: username)
-    }
     
     // MARK: - Initialization
     
@@ -54,13 +26,28 @@ class ViewModel {
         self.greetingGenerator = greetingGenerator
     }
     
-    // MARK: Public
+    // TODO: Test 1 'title'
+    let titleLabel: String = "Hello world"
     
-    func doSomethingAsync(completion:CompletionHandler) {
-        completion()
+    // TODO: Test 2 'calculate'
+    func calculate(number: Int) -> Int {
+        return number * 3
     }
     
-    func changeSomething() {
+    // TODO: Test 3 'greeting'
+    func greetingLabel(with name: String?) -> String {
+        return greetingGenerator.greeting(with: name)
+    }
+    
+    // TODO: Test 4 'trigger'
+    func trigger() {
         self.delegate?.didChangeSomething(self)
+    }
+    
+    // TODO: Test 5 'async'
+    func async(with name:String?, completion:@escaping GreetingCompletion) {
+        DispatchQueue.main.async {
+            completion("Some value")
+        }
     }
 }
