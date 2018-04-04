@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     private lazy var firstButton:UIButton = {
         let button = UIButton(type: UIButtonType.roundedRect)
-        button.setTitle("Do something else", for: .normal)
+        button.setTitle("Do something async", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didPressFirstButton), for: .touchUpInside)
         
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     private lazy var secondButton:UIButton = {
         let button = UIButton(type: UIButtonType.roundedRect)
-        button.setTitle("Do something async", for: .normal)
+        button.setTitle("Do something else", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didPressSecondButton), for: .touchUpInside)
         
